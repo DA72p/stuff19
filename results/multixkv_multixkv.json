@@ -1,0 +1,82 @@
+{
+ "config": {
+  "lora_R": 16,
+  "bridge_epochs": 4,
+  "bridge_lr": 0.0002,
+  "n_train": 200,
+  "n_eval": 200,
+  "max_ctx": 256,
+  "gen_len": 8,
+  "arms": [
+   "raw",
+   "qkv"
+  ],
+  "n_holders": [
+   1,
+   2,
+   4,
+   8
+  ],
+  "keepbest_slice": 32,
+  "train_N": 4
+ },
+ "base": "Qwen/Qwen2.5-1.5B",
+ "runs": {
+  "raw:N1": {
+   "floor": 0.18,
+   "ceiling": 0.665,
+   "shared": 0.555,
+   "ctrl_masked": 0.185,
+   "ctrl_distract": 0.085
+  },
+  "raw:N2": {
+   "floor": 0.18,
+   "ceiling": 0.665,
+   "shared": 0.375,
+   "ctrl_masked": 0.145,
+   "ctrl_distract": 0.045
+  },
+  "raw:N4": {
+   "floor": 0.18,
+   "ceiling": 0.665,
+   "shared": 0.155,
+   "ctrl_masked": 0.085,
+   "ctrl_distract": 0.045
+  },
+  "raw:N8": {
+   "floor": 0.18,
+   "ceiling": 0.665,
+   "shared": 0.07,
+   "ctrl_masked": 0.03,
+   "ctrl_distract": 0.03
+  },
+  "qkv:N1": {
+   "floor": 0.18,
+   "ceiling": 0.665,
+   "shared": 0.785,
+   "ctrl_masked": 0.135,
+   "ctrl_distract": 0.145
+  },
+  "qkv:N2": {
+   "floor": 0.18,
+   "ceiling": 0.665,
+   "shared": 0.735,
+   "ctrl_masked": 0.145,
+   "ctrl_distract": 0.19
+  },
+  "qkv:N4": {
+   "floor": 0.18,
+   "ceiling": 0.665,
+   "shared": 0.55,
+   "ctrl_masked": 0.2,
+   "ctrl_distract": 0.24
+  },
+  "qkv:N8": {
+   "floor": 0.18,
+   "ceiling": 0.665,
+   "shared": 0.395,
+   "ctrl_masked": 0.23,
+   "ctrl_distract": 0.23
+  }
+ }
+}

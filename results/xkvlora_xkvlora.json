@@ -1,0 +1,82 @@
+{
+ "config": {
+  "lora_R": 16,
+  "bridge_epochs": 4,
+  "bridge_lr": 0.0002,
+  "n_train": 200,
+  "n_eval": 200,
+  "max_ctx": 256,
+  "gen_len": 8,
+  "arms": [
+   "raw",
+   "qonly",
+   "kv_only",
+   "qkv"
+  ],
+  "settings": [
+   "same",
+   "cross"
+  ],
+  "keepbest_slice": 32
+ },
+ "base": "Qwen/Qwen2.5-1.5B",
+ "holderX": "EleutherAI/gpt-neo-1.3B",
+ "runs": {
+  "same:raw": {
+   "floor": 0.18,
+   "ceiling": 0.665,
+   "identity": 0.555,
+   "xkv_shared": 0.555,
+   "xkv_ctrl": 0.185
+  },
+  "same:qonly": {
+   "floor": 0.18,
+   "ceiling": 0.665,
+   "identity": 0.555,
+   "xkv_shared": 0.6,
+   "xkv_ctrl": 0.155
+  },
+  "same:kv_only": {
+   "floor": 0.18,
+   "ceiling": 0.665,
+   "identity": 0.555,
+   "xkv_shared": 0.64,
+   "xkv_ctrl": 0.09
+  },
+  "same:qkv": {
+   "floor": 0.18,
+   "ceiling": 0.665,
+   "identity": 0.555,
+   "xkv_shared": 0.695,
+   "xkv_ctrl": 0.2
+  },
+  "cross:raw": {
+   "floor": 0.18,
+   "ceiling": 0.665,
+   "identity": 0.0,
+   "xkv_shared": 0.01,
+   "xkv_ctrl": 0.005
+  },
+  "cross:qonly": {
+   "floor": 0.18,
+   "ceiling": 0.665,
+   "identity": 0.0,
+   "xkv_shared": 0.01,
+   "xkv_ctrl": 0.005
+  },
+  "cross:kv_only": {
+   "floor": 0.18,
+   "ceiling": 0.665,
+   "identity": 0.0,
+   "xkv_shared": 0.08,
+   "xkv_ctrl": 0.085
+  },
+  "cross:qkv": {
+   "floor": 0.18,
+   "ceiling": 0.665,
+   "identity": 0.0,
+   "xkv_shared": 0.04,
+   "xkv_ctrl": 0.035
+  }
+ }
+}

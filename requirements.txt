@@ -1,0 +1,8 @@
+# The transformers pin is load-bearing, not advisory: the notebooks use
+# DynamicCache.from_legacy_cache, whose legacy tuple-cache protocol is
+# deprecated in transformers >= 4.56. Newer versions will raise.
+torch==2.4.0
+transformers==4.44.2
+datasets==2.21.0
+numpy==1.26.4
+matplotlib==3.9.4
